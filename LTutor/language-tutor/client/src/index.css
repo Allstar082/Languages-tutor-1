@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-brand-500 text-white font-medium px-4 py-2
+           hover:bg-brand-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900
+           dark:text-slate-100 font-medium px-4 py-2 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors;
+  }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(47, 125, 250, 0.45); }
+  100% { box-shadow: 0 0 0 24px rgba(47, 125, 250, 0); }
+}
+.mic-listening { animation: pulse-ring 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
